@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct DictionaryResponse: Decodable {
+struct DictionaryResponse: Codable {
     let lfs: [LongFormApi]
 }
 
-struct LongFormApi: Decodable {
+struct LongFormApi: Codable {
     let lf: String
     let freq, since: Int
 }

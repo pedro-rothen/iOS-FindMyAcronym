@@ -26,6 +26,7 @@
 		EB38AF2C2C4611F10011D0CE /* GetLongFormsUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF2B2C4611F10011D0CE /* GetLongFormsUseCaseImpl.swift */; };
 		EB38AF2E2C4612FA0011D0CE /* SearchAcronymView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF2D2C4612FA0011D0CE /* SearchAcronymView.swift */; };
 		EB38AF342C46B8050011D0CE /* ApiServiceImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF332C46B8050011D0CE /* ApiServiceImplTests.swift */; };
+		EB38AF382C46CC100011D0CE /* AcronymRemoteDataSourceImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF372C46CC100011D0CE /* AcronymRemoteDataSourceImplTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		EB38AF2D2C4612FA0011D0CE /* SearchAcronymView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAcronymView.swift; sourceTree = "<group>"; };
 		EB38AF2F2C46292C0011D0CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EB38AF332C46B8050011D0CE /* ApiServiceImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceImplTests.swift; sourceTree = "<group>"; };
+		EB38AF372C46CC100011D0CE /* AcronymRemoteDataSourceImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymRemoteDataSourceImplTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +250,7 @@
 		EB38AF302C46B51C0011D0CE /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				EB38AF352C46CBB10011D0CE /* DataSources */,
 				EB38AF312C46B7810011D0CE /* Network */,
 			);
 			path = Data;
@@ -265,6 +268,22 @@
 			isa = PBXGroup;
 			children = (
 				EB38AF332C46B8050011D0CE /* ApiServiceImplTests.swift */,
+			);
+			path = Unit;
+			sourceTree = "<group>";
+		};
+		EB38AF352C46CBB10011D0CE /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				EB38AF362C46CBBD0011D0CE /* Unit */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		EB38AF362C46CBBD0011D0CE /* Unit */ = {
+			isa = PBXGroup;
+			children = (
+				EB38AF372C46CC100011D0CE /* AcronymRemoteDataSourceImplTests.swift */,
 			);
 			path = Unit;
 			sourceTree = "<group>";
@@ -419,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB38AF382C46CC100011D0CE /* AcronymRemoteDataSourceImplTests.swift in Sources */,
 				EB38AF342C46B8050011D0CE /* ApiServiceImplTests.swift in Sources */,
 				EB38AEF32C45FACE0011D0CE /* FindMyAcronymTests.swift in Sources */,
 			);
