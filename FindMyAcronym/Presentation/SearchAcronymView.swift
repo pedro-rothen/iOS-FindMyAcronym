@@ -10,12 +10,12 @@ import Combine
 
 @MainActor
 struct SearchAcronymView: View {
+    /// New api, for older versions would be @StateObject
     @State var viewModel: SearchAcronymViewModel
     
     var body: some View {
         NavigationStack {
             VStack {
-                Text(viewModel.query)
                 Content()
             }.navigationTitle("Busca tu acrónimo")
         }.searchable(text: $viewModel.query)
@@ -26,12 +26,14 @@ struct SearchAcronymView: View {
         switch viewModel.uiState {
         case .idle:
             EmptyView()
+        case .noResults:
+            Text("Sin resultados 🙃")
         case .loading:
             ProgressView()
                 .controlSize(.large)
         case .error:
             Button(action: {
-                //TODO
+                viewModel.retry()
             }) {
                 Text("Reintentar 😔")
             }
@@ -45,8 +47,11 @@ struct SearchAcronymView: View {
     }
 }
 
+/// New api, for older versions would be SearchAcronymViewModel: ObservableObject.
+/// Would required @Published for all observable properties
 @Observable
 class SearchAcronymViewModel {
+    /// Patch to observe property from the viewModel
     @ObservationIgnored @Published var query: String = ""
     var uiState: SearchAcronymUiState = .idle
     let getLongFormsUseCase: GetLongFormsUseCase
@@ -61,9 +66,13 @@ class SearchAcronymViewModel {
         print(#function)
         $query
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
-            .sink { [weak self] in
-            self?.search(query: $0)
-        }.store(in: &cancellables)
+            .sink { [weak self] query in
+                if query.count <= 1 {
+                    self?.uiState = .idle
+                } else {
+                    self?.search(query: query)
+                }
+            }.store(in: &cancellables)
     }
     
     private func search(query: String) {
@@ -79,7 +88,13 @@ class SearchAcronymViewModel {
                     break
                 case .failure(let error):
                     print(error)
-                    self?.uiState = .error
+                    self?.uiState = {
+                        if let acronymError = error as? AcronymError, acronymError == .empty {
+                            .noResults
+                        } else {
+                            .error
+                        }
+                    }()
                 }
             }) { [weak self] results in
                 print(results)
@@ -87,10 +102,14 @@ class SearchAcronymViewModel {
             }.store(in: &cancellables)
             
     }
+    
+    func retry() {
+        search(query: query)
+    }
 }
 
 enum SearchAcronymUiState {
-    case idle, loading, error, success(results: [LongForm])
+    case idle, loading, noResults, error, success(results: [LongForm])
 }
 
 #Preview {
