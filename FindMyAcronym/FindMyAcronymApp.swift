@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct FindMyAcronymApp: App {
+    let getLongFormsUseCase = GetLongFormsUseCaseImpl(acronymRepository: AcronymRepositoryImpl(acronymDataSource: AcronymRemoteDataSourceImpl(service: ApiServiceImpl())))
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SearchAcronymView(viewModel: SearchAcronymViewModel(getLongFormsUseCase: getLongFormsUseCase))
         }
     }
 }

@@ -8,12 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		EB38AEE22C45FACC0011D0CE /* FindMyAcronymApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AEE12C45FACC0011D0CE /* FindMyAcronymApp.swift */; };
-		EB38AEE42C45FACC0011D0CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AEE32C45FACC0011D0CE /* ContentView.swift */; };
 		EB38AEE62C45FACE0011D0CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB38AEE52C45FACE0011D0CE /* Assets.xcassets */; };
 		EB38AEE92C45FACE0011D0CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB38AEE82C45FACE0011D0CE /* Preview Assets.xcassets */; };
 		EB38AEF32C45FACE0011D0CE /* FindMyAcronymTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AEF22C45FACE0011D0CE /* FindMyAcronymTests.swift */; };
 		EB38AEFD2C45FACE0011D0CE /* FindMyAcronymUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AEFC2C45FACE0011D0CE /* FindMyAcronymUITests.swift */; };
 		EB38AEFF2C45FACE0011D0CE /* FindMyAcronymUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AEFE2C45FACE0011D0CE /* FindMyAcronymUITestsLaunchTests.swift */; };
+		EB38AF102C45FC700011D0CE /* AcronymRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF0F2C45FC700011D0CE /* AcronymRepository.swift */; };
+		EB38AF132C45FCEB0011D0CE /* AcronymRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF122C45FCEB0011D0CE /* AcronymRepositoryImpl.swift */; };
+		EB38AF162C45FD750011D0CE /* AcronymRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF152C45FD750011D0CE /* AcronymRemoteDataSource.swift */; };
+		EB38AF182C45FE820011D0CE /* AcronymRemoteDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF172C45FE820011D0CE /* AcronymRemoteDataSourceImpl.swift */; };
+		EB38AF1B2C4604D30011D0CE /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF1A2C4604D30011D0CE /* ApiService.swift */; };
+		EB38AF202C46083D0011D0CE /* LongForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF1F2C46083D0011D0CE /* LongForm.swift */; };
+		EB38AF222C46096E0011D0CE /* DictionaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF212C46096E0011D0CE /* DictionaryResponse.swift */; };
+		EB38AF252C460B920011D0CE /* LongFormMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF242C460B920011D0CE /* LongFormMapper.swift */; };
+		EB38AF272C460D510011D0CE /* ApiServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF262C460D510011D0CE /* ApiServiceImpl.swift */; };
+		EB38AF2A2C46114E0011D0CE /* GetLongFormsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF292C46114E0011D0CE /* GetLongFormsUseCase.swift */; };
+		EB38AF2C2C4611F10011D0CE /* GetLongFormsUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF2B2C4611F10011D0CE /* GetLongFormsUseCaseImpl.swift */; };
+		EB38AF2E2C4612FA0011D0CE /* SearchAcronymView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF2D2C4612FA0011D0CE /* SearchAcronymView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +47,6 @@
 /* Begin PBXFileReference section */
 		EB38AEDE2C45FACC0011D0CE /* FindMyAcronym.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMyAcronym.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB38AEE12C45FACC0011D0CE /* FindMyAcronymApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyAcronymApp.swift; sourceTree = "<group>"; };
-		EB38AEE32C45FACC0011D0CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EB38AEE52C45FACE0011D0CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB38AEE82C45FACE0011D0CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EB38AEEE2C45FACE0011D0CE /* FindMyAcronymTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindMyAcronymTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +54,19 @@
 		EB38AEF82C45FACE0011D0CE /* FindMyAcronymUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindMyAcronymUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB38AEFC2C45FACE0011D0CE /* FindMyAcronymUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyAcronymUITests.swift; sourceTree = "<group>"; };
 		EB38AEFE2C45FACE0011D0CE /* FindMyAcronymUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyAcronymUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EB38AF0F2C45FC700011D0CE /* AcronymRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymRepository.swift; sourceTree = "<group>"; };
+		EB38AF122C45FCEB0011D0CE /* AcronymRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymRepositoryImpl.swift; sourceTree = "<group>"; };
+		EB38AF152C45FD750011D0CE /* AcronymRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymRemoteDataSource.swift; sourceTree = "<group>"; };
+		EB38AF172C45FE820011D0CE /* AcronymRemoteDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymRemoteDataSourceImpl.swift; sourceTree = "<group>"; };
+		EB38AF1A2C4604D30011D0CE /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		EB38AF1F2C46083D0011D0CE /* LongForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongForm.swift; sourceTree = "<group>"; };
+		EB38AF212C46096E0011D0CE /* DictionaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryResponse.swift; sourceTree = "<group>"; };
+		EB38AF242C460B920011D0CE /* LongFormMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongFormMapper.swift; sourceTree = "<group>"; };
+		EB38AF262C460D510011D0CE /* ApiServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceImpl.swift; sourceTree = "<group>"; };
+		EB38AF292C46114E0011D0CE /* GetLongFormsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLongFormsUseCase.swift; sourceTree = "<group>"; };
+		EB38AF2B2C4611F10011D0CE /* GetLongFormsUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLongFormsUseCaseImpl.swift; sourceTree = "<group>"; };
+		EB38AF2D2C4612FA0011D0CE /* SearchAcronymView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAcronymView.swift; sourceTree = "<group>"; };
+		EB38AF2F2C46292C0011D0CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,11 +117,11 @@
 		EB38AEE02C45FACC0011D0CE /* FindMyAcronym */ = {
 			isa = PBXGroup;
 			children = (
+				EB38AF2F2C46292C0011D0CE /* Info.plist */,
 				EB38AF0D2C45FAFB0011D0CE /* Presentation */,
 				EB38AF0C2C45FAF20011D0CE /* Data */,
 				EB38AF0B2C45FAEC0011D0CE /* Domain */,
 				EB38AEE12C45FACC0011D0CE /* FindMyAcronymApp.swift */,
-				EB38AEE32C45FACC0011D0CE /* ContentView.swift */,
 				EB38AEE52C45FACE0011D0CE /* Assets.xcassets */,
 				EB38AEE72C45FACE0011D0CE /* Preview Content */,
 			);
@@ -133,6 +156,9 @@
 		EB38AF0B2C45FAEC0011D0CE /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				EB38AF282C4611260011D0CE /* UseCases */,
+				EB38AF1E2C46071D0011D0CE /* Entities */,
+				EB38AF0E2C45FC390011D0CE /* Repositories */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -140,6 +166,10 @@
 		EB38AF0C2C45FAF20011D0CE /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				EB38AF232C460B670011D0CE /* Mappers */,
+				EB38AF192C45FF4F0011D0CE /* Network */,
+				EB38AF142C45FD130011D0CE /* DataSources */,
+				EB38AF112C45FCBD0011D0CE /* Repositories */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -147,8 +177,69 @@
 		EB38AF0D2C45FAFB0011D0CE /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				EB38AF2D2C4612FA0011D0CE /* SearchAcronymView.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		EB38AF0E2C45FC390011D0CE /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				EB38AF0F2C45FC700011D0CE /* AcronymRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		EB38AF112C45FCBD0011D0CE /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				EB38AF122C45FCEB0011D0CE /* AcronymRepositoryImpl.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		EB38AF142C45FD130011D0CE /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				EB38AF152C45FD750011D0CE /* AcronymRemoteDataSource.swift */,
+				EB38AF172C45FE820011D0CE /* AcronymRemoteDataSourceImpl.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		EB38AF192C45FF4F0011D0CE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EB38AF1A2C4604D30011D0CE /* ApiService.swift */,
+				EB38AF262C460D510011D0CE /* ApiServiceImpl.swift */,
+				EB38AF212C46096E0011D0CE /* DictionaryResponse.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		EB38AF1E2C46071D0011D0CE /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				EB38AF1F2C46083D0011D0CE /* LongForm.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		EB38AF232C460B670011D0CE /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				EB38AF242C460B920011D0CE /* LongFormMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		EB38AF282C4611260011D0CE /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				EB38AF292C46114E0011D0CE /* GetLongFormsUseCase.swift */,
+				EB38AF2B2C4611F10011D0CE /* GetLongFormsUseCaseImpl.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,8 +372,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB38AEE42C45FACC0011D0CE /* ContentView.swift in Sources */,
+				EB38AF132C45FCEB0011D0CE /* AcronymRepositoryImpl.swift in Sources */,
+				EB38AF2C2C4611F10011D0CE /* GetLongFormsUseCaseImpl.swift in Sources */,
+				EB38AF182C45FE820011D0CE /* AcronymRemoteDataSourceImpl.swift in Sources */,
+				EB38AF102C45FC700011D0CE /* AcronymRepository.swift in Sources */,
 				EB38AEE22C45FACC0011D0CE /* FindMyAcronymApp.swift in Sources */,
+				EB38AF1B2C4604D30011D0CE /* ApiService.swift in Sources */,
+				EB38AF202C46083D0011D0CE /* LongForm.swift in Sources */,
+				EB38AF272C460D510011D0CE /* ApiServiceImpl.swift in Sources */,
+				EB38AF2A2C46114E0011D0CE /* GetLongFormsUseCase.swift in Sources */,
+				EB38AF2E2C4612FA0011D0CE /* SearchAcronymView.swift in Sources */,
+				EB38AF252C460B920011D0CE /* LongFormMapper.swift in Sources */,
+				EB38AF222C46096E0011D0CE /* DictionaryResponse.swift in Sources */,
+				EB38AF162C45FD750011D0CE /* AcronymRemoteDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +550,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FindMyAcronym/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FindMyAcronym/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -476,6 +579,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FindMyAcronym/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FindMyAcronym/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
