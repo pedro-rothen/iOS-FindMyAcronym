@@ -9,10 +9,15 @@ import Foundation
 import Combine
 
 class ApiServiceImpl: ApiService {
+    let session: URLSessionProtocol
+    
+    init(session: URLSessionProtocol = URLSession.shared) {
+        self.session = session
+    }
+    
     func fetchData(from url: URL) -> AnyPublisher<Data, URLError> {
-        return URLSession
-            .shared
-            .dataTaskPublisher(for: url)
+        return session
+            .dataTaskPublisher(url: url)
             .map(\.data)
             .eraseToAnyPublisher()
     }
