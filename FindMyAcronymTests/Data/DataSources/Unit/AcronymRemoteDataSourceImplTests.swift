@@ -30,8 +30,7 @@ final class AcronymRemoteDataSourceImplTests: XCTestCase {
     func testDataSuccess() throws {
         //Arrange
         let acronym = AcronymStub.acronym
-        let longFormApi = LongFormApi(lf: "what the heck", freq: 100, since: 1979)
-        let expectedValue = [DictionaryResponse(lfs: [longFormApi])]
+        let expectedValue = [AcronymStub.dictResponse]
         let data = try JSONEncoder().encode(expectedValue)
         mockApiService.stubData = Just(data).setFailureType(to: URLError.self).eraseToAnyPublisher()
         
@@ -47,6 +46,7 @@ final class AcronymRemoteDataSourceImplTests: XCTestCase {
                     break
                 case .failure(let failure):
                     receivedError = failure as? URLError
+                    expectation.fulfill()
                 }
             }) { value in
                 receivedValue = value
@@ -71,4 +71,6 @@ final class AcronymRemoteDataSourceImplTests: XCTestCase {
 
 struct AcronymStub {
     static let acronym = "wth"
+    static let longFormApi = LongFormApi(lf: "what the heck", freq: 100, since: 1979)
+    static let dictResponse = DictionaryResponse(lfs: [longFormApi])
 }

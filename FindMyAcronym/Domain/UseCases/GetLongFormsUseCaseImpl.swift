@@ -16,6 +16,11 @@ class GetLongFormsUseCaseImpl: GetLongFormsUseCase {
     }
     
     func execute(for query: String) -> AnyPublisher<[LongForm], any Error> {
-        return acronymRepository.getFullforms(forAcronym: query)
+        return acronymRepository
+            .getFullforms(forAcronym: query)
+            .tryMap {
+                guard let results = $0.first else { throw AcronymError.empty }
+                return $0
+            }.eraseToAnyPublisher()
     }
 }

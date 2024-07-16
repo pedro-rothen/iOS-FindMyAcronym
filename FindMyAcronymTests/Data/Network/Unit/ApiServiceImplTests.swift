@@ -49,6 +49,7 @@ final class ApiServiceImplTests: XCTestCase {
                     break
                 case .failure(let failure):
                     receivedError = failure
+                    expectation.fulfill()
                 }
             }) { data in
                 receivedData = data
@@ -84,6 +85,7 @@ final class ApiServiceImplTests: XCTestCase {
                 }
             }) { data in
                 receivedData = data
+                expectation.fulfill()
             }.store(in: &cancellables)
         waitForExpectations(timeout: 1)
         

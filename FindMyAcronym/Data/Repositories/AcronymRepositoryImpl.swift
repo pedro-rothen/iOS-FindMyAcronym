@@ -18,9 +18,8 @@ class AcronymRepositoryImpl: AcronymRepository {
     func getFullforms(forAcronym query: String) -> AnyPublisher<[LongForm], any Error> {
         return acronymDataSource
             .getFullforms(forAcronym: query)
-            .tryMap {
-                guard let results = $0.first else { throw AcronymError.empty }
-                return results.lfs.map { LongFormMapper.map($0) }
+            .compactMap {
+                $0.first?.lfs.map { LongFormMapper.map($0) }
             }.eraseToAnyPublisher()
     }
 }
