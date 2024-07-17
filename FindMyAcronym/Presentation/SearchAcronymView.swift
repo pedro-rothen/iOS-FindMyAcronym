@@ -111,7 +111,6 @@ class SearchAcronymViewModel: ObservableObject {
                 print(results)
                 self?.uiState = .success(results: results)
             }.store(in: &cancellables)
-            
     }
     
     func retry() {
@@ -127,7 +126,14 @@ struct AcronymResultsView: UIViewControllerRepresentable {
     let query: String
     
     func makeUIViewController(context: Context) -> AcronymResultsViewController {
-        return AcronymResultsViewController(query: query)
+        let presenter = AcronymResultsPresenter()
+        let viewController = AcronymResultsViewController(query: query)
+        presenter.viewController = viewController
+        viewController.presenter = presenter
+        let getLongFormsUseCase = GetLongFormsUseCaseImpl(acronymRepository: AcronymRepositoryImpl(acronymDataSource: AcronymRemoteDataSourceImpl(service: ApiServiceImpl())))
+        let interactor = AcronymResultsInteractor(getLongFormsUseCase: getLongFormsUseCase, presenter: presenter)
+        presenter.interactor = interactor
+        return viewController
     }
     
     func updateUIViewController(_ uiViewController: AcronymResultsViewController, context: Context) { }

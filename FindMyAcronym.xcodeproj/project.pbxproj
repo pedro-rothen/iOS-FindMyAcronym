@@ -30,6 +30,11 @@
 		EB38AF402C472B320011D0CE /* GetLongFormsImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF3F2C472B320011D0CE /* GetLongFormsImplTests.swift */; };
 		EB38AF442C47362A0011D0CE /* SearchAcronymViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF432C47362A0011D0CE /* SearchAcronymViewModelTests.swift */; };
 		EB38AF472C47535C0011D0CE /* AcronymResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF462C47535C0011D0CE /* AcronymResultsViewController.swift */; };
+		EB38AF4B2C47607B0011D0CE /* AcronymResultsInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF4A2C47607B0011D0CE /* AcronymResultsInteractorProtocol.swift */; };
+		EB38AF4D2C4761540011D0CE /* AcronymResultsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF4C2C4761540011D0CE /* AcronymResultsInteractor.swift */; };
+		EB38AF4F2C47623F0011D0CE /* AcronymResultsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF4E2C47623F0011D0CE /* AcronymResultsPresenterProtocol.swift */; };
+		EB38AF512C4764310011D0CE /* AcronymResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF502C4764310011D0CE /* AcronymResultsPresenter.swift */; };
+		EB38AF542C4764BB0011D0CE /* AcronymResultsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF532C4764BB0011D0CE /* AcronymResultsViewProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +82,11 @@
 		EB38AF3F2C472B320011D0CE /* GetLongFormsImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLongFormsImplTests.swift; sourceTree = "<group>"; };
 		EB38AF432C47362A0011D0CE /* SearchAcronymViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAcronymViewModelTests.swift; sourceTree = "<group>"; };
 		EB38AF462C47535C0011D0CE /* AcronymResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymResultsViewController.swift; sourceTree = "<group>"; };
+		EB38AF4A2C47607B0011D0CE /* AcronymResultsInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymResultsInteractorProtocol.swift; sourceTree = "<group>"; };
+		EB38AF4C2C4761540011D0CE /* AcronymResultsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymResultsInteractor.swift; sourceTree = "<group>"; };
+		EB38AF4E2C47623F0011D0CE /* AcronymResultsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymResultsPresenterProtocol.swift; sourceTree = "<group>"; };
+		EB38AF502C4764310011D0CE /* AcronymResultsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymResultsPresenter.swift; sourceTree = "<group>"; };
+		EB38AF532C4764BB0011D0CE /* AcronymResultsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymResultsViewProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,9 +358,38 @@
 		EB38AF452C4751530011D0CE /* DetailUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				EB38AF462C47535C0011D0CE /* AcronymResultsViewController.swift */,
+				EB38AF522C4764930011D0CE /* View */,
+				EB38AF492C475DEC0011D0CE /* Presenter */,
+				EB38AF482C475DE50011D0CE /* Interactor */,
 			);
 			path = DetailUIKit;
+			sourceTree = "<group>";
+		};
+		EB38AF482C475DE50011D0CE /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				EB38AF4A2C47607B0011D0CE /* AcronymResultsInteractorProtocol.swift */,
+				EB38AF4C2C4761540011D0CE /* AcronymResultsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		EB38AF492C475DEC0011D0CE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				EB38AF4E2C47623F0011D0CE /* AcronymResultsPresenterProtocol.swift */,
+				EB38AF502C4764310011D0CE /* AcronymResultsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		EB38AF522C4764930011D0CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB38AF532C4764BB0011D0CE /* AcronymResultsViewProtocol.swift */,
+				EB38AF462C47535C0011D0CE /* AcronymResultsViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -484,11 +523,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB38AF132C45FCEB0011D0CE /* AcronymRepositoryImpl.swift in Sources */,
+				EB38AF512C4764310011D0CE /* AcronymResultsPresenter.swift in Sources */,
 				EB38AF2C2C4611F10011D0CE /* GetLongFormsUseCaseImpl.swift in Sources */,
+				EB38AF4B2C47607B0011D0CE /* AcronymResultsInteractorProtocol.swift in Sources */,
 				EB38AF182C45FE820011D0CE /* AcronymRemoteDataSourceImpl.swift in Sources */,
 				EB38AF102C45FC700011D0CE /* AcronymRepository.swift in Sources */,
+				EB38AF4F2C47623F0011D0CE /* AcronymResultsPresenterProtocol.swift in Sources */,
 				EB38AEE22C45FACC0011D0CE /* FindMyAcronymApp.swift in Sources */,
 				EB38AF1B2C4604D30011D0CE /* ApiService.swift in Sources */,
+				EB38AF542C4764BB0011D0CE /* AcronymResultsViewProtocol.swift in Sources */,
 				EB38AF202C46083D0011D0CE /* LongForm.swift in Sources */,
 				EB38AF472C47535C0011D0CE /* AcronymResultsViewController.swift in Sources */,
 				EB38AF272C460D510011D0CE /* ApiServiceImpl.swift in Sources */,
@@ -497,6 +540,7 @@
 				EB38AF252C460B920011D0CE /* LongFormMapper.swift in Sources */,
 				EB38AF222C46096E0011D0CE /* DictionaryResponse.swift in Sources */,
 				EB38AF162C45FD750011D0CE /* AcronymRemoteDataSource.swift in Sources */,
+				EB38AF4D2C4761540011D0CE /* AcronymResultsInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
