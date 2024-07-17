@@ -37,9 +37,25 @@ struct SearchAcronymView: View {
                 Text("Reintentar 😔")
             }
         case .success(let results):
-            List {
-                ForEach(results, id: \.self) { longForm in
-                    Text(longForm.representativeForm)
+            VStack {
+                NavigationLink(destination: {
+                    let query = viewModel.query
+                    AcronymResultsView(query: query)
+                        .navigationTitle(query)
+                }) {
+                    Text("Go to results in UIKit")
+                }
+                List {
+                    ForEach(results, id: \.self) { longForm in
+                        VStack(alignment: .leading) {
+                            Text(longForm.representativeForm)
+                                .fontWeight(.medium)
+                            HStack {
+                                Text("Ocurrencias: \(longForm.occurrences)")
+                                Text("Desde: \(longForm.since)")
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -107,9 +123,20 @@ enum SearchAcronymUiState {
     case idle, loading, noResults, error, success(results: [LongForm])
 }
 
+struct AcronymResultsView: UIViewControllerRepresentable {
+    let query: String
+    
+    func makeUIViewController(context: Context) -> AcronymResultsViewController {
+        return AcronymResultsViewController(query: query)
+    }
+    
+    func updateUIViewController(_ uiViewController: AcronymResultsViewController, context: Context) { }
+}
+
 #Preview {
     let getLongFormsUseCase = GetLongFormsUseCaseImpl(acronymRepository: AcronymRepositoryImpl(acronymDataSource: AcronymRemoteDataSourceImpl(service: ApiServiceImpl())))
     
     let viewModel = SearchAcronymViewModel(getLongFormsUseCase: getLongFormsUseCase)
+    viewModel.query = "DNA"
     return SearchAcronymView(viewModel: viewModel)
 }

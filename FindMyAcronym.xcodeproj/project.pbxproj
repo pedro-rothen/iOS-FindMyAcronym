@@ -29,6 +29,7 @@
 		EB38AF3B2C4723A30011D0CE /* AcronymRepositoryImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF3A2C4723A30011D0CE /* AcronymRepositoryImplTests.swift */; };
 		EB38AF402C472B320011D0CE /* GetLongFormsImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF3F2C472B320011D0CE /* GetLongFormsImplTests.swift */; };
 		EB38AF442C47362A0011D0CE /* SearchAcronymViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF432C47362A0011D0CE /* SearchAcronymViewModelTests.swift */; };
+		EB38AF472C47535C0011D0CE /* AcronymResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF462C47535C0011D0CE /* AcronymResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		EB38AF3A2C4723A30011D0CE /* AcronymRepositoryImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymRepositoryImplTests.swift; sourceTree = "<group>"; };
 		EB38AF3F2C472B320011D0CE /* GetLongFormsImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLongFormsImplTests.swift; sourceTree = "<group>"; };
 		EB38AF432C47362A0011D0CE /* SearchAcronymViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAcronymViewModelTests.swift; sourceTree = "<group>"; };
+		EB38AF462C47535C0011D0CE /* AcronymResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 		EB38AF0D2C45FAFB0011D0CE /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				EB38AF452C4751530011D0CE /* DetailUIKit */,
 				EB38AF2D2C4612FA0011D0CE /* SearchAcronymView.swift */,
 			);
 			path = Presentation;
@@ -342,6 +345,14 @@
 			path = Unit;
 			sourceTree = "<group>";
 		};
+		EB38AF452C4751530011D0CE /* DetailUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				EB38AF462C47535C0011D0CE /* AcronymResultsViewController.swift */,
+			);
+			path = DetailUIKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -479,6 +490,7 @@
 				EB38AEE22C45FACC0011D0CE /* FindMyAcronymApp.swift in Sources */,
 				EB38AF1B2C4604D30011D0CE /* ApiService.swift in Sources */,
 				EB38AF202C46083D0011D0CE /* LongForm.swift in Sources */,
+				EB38AF472C47535C0011D0CE /* AcronymResultsViewController.swift in Sources */,
 				EB38AF272C460D510011D0CE /* ApiServiceImpl.swift in Sources */,
 				EB38AF2A2C46114E0011D0CE /* GetLongFormsUseCase.swift in Sources */,
 				EB38AF2E2C4612FA0011D0CE /* SearchAcronymView.swift in Sources */,
