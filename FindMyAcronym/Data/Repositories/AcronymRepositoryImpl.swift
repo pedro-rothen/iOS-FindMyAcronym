@@ -20,7 +20,8 @@ class AcronymRepositoryImpl: AcronymRepository {
             .getFullforms(forAcronym: query)
             .compactMap {
                 $0.first?.lfs.map { LongFormMapper.map($0) }
-            }.eraseToAnyPublisher()
+            }.replaceEmpty(with: [LongForm]())
+            .eraseToAnyPublisher()
     }
 }
 

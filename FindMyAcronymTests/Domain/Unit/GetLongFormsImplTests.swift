@@ -32,7 +32,7 @@ final class GetLongFormsImplTests: XCTestCase {
     func testSuccess() throws {
         //Arrange
         let query = AcronymStub.acronym
-        let longForm = LongFormSub.longForm
+        let longForm = LongFormStub.longForm
         let expectedLongFormArray = [longForm]
         mockAcronymRepository.stub = Just(expectedLongFormArray).setFailureType(to: Error.self).eraseToAnyPublisher()
         
@@ -103,6 +103,6 @@ final class GetLongFormsImplTests: XCTestCase {
     }
 }
 
-struct LongFormSub {
+struct LongFormStub {
     static let longForm = LongForm(representativeForm: "deoxyribonucleic acid", occurrences: 100, since: 1979)
 }

@@ -53,7 +53,7 @@ struct SearchAcronymView: View {
 class SearchAcronymViewModel {
     /// Patch to observe property from the viewModel
     @ObservationIgnored @Published var query: String = ""
-    var uiState: SearchAcronymUiState = .idle
+    @ObservationIgnored @Published var uiState: SearchAcronymUiState = .idle
     let getLongFormsUseCase: GetLongFormsUseCase
     private var cancellables = Set<AnyCancellable>()
     
@@ -75,7 +75,7 @@ class SearchAcronymViewModel {
             }.store(in: &cancellables)
     }
     
-    private func search(query: String) {
+    func search(query: String) {
         print(#function)
         print("Query: \(query)")
         uiState = .loading
@@ -90,9 +90,10 @@ class SearchAcronymViewModel {
                     print(error)
                     self?.uiState = {
                         if let acronymError = error as? AcronymError, acronymError == .empty {
-                            .noResults
+                            print("No results")
+                            return .noResults
                         } else {
-                            .error
+                            return .error
                         }
                     }()
                 }

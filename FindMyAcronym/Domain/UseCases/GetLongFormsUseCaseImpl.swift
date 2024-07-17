@@ -19,7 +19,9 @@ class GetLongFormsUseCaseImpl: GetLongFormsUseCase {
         return acronymRepository
             .getFullforms(forAcronym: query)
             .tryMap {
-                guard let results = $0.first else { throw AcronymError.empty }
+                if $0.isEmpty {
+                    throw AcronymError.empty
+                }
                 return $0
             }.eraseToAnyPublisher()
     }
