@@ -10,8 +10,7 @@ import Combine
 
 @MainActor
 struct SearchAcronymView: View {
-    /// New api, for older versions would be @StateObject
-    @State var viewModel: SearchAcronymViewModel
+    @StateObject var viewModel: SearchAcronymViewModel
     
     var body: some View {
         NavigationStack {
@@ -47,13 +46,9 @@ struct SearchAcronymView: View {
     }
 }
 
-/// New api, for older versions would be SearchAcronymViewModel: ObservableObject.
-/// Would required @Published for all observable properties
-@Observable
-class SearchAcronymViewModel {
-    /// Patch to observe property from the viewModel
-    @ObservationIgnored @Published var query: String = ""
-    @ObservationIgnored @Published var uiState: SearchAcronymUiState = .idle
+class SearchAcronymViewModel: ObservableObject {
+    @Published var query: String = ""
+    @Published var uiState: SearchAcronymUiState = .idle
     let getLongFormsUseCase: GetLongFormsUseCase
     private var cancellables = Set<AnyCancellable>()
     
@@ -90,10 +85,9 @@ class SearchAcronymViewModel {
                     print(error)
                     self?.uiState = {
                         if let acronymError = error as? AcronymError, acronymError == .empty {
-                            print("No results")
-                            return .noResults
+                            .noResults
                         } else {
-                            return .error
+                            .error
                         }
                     }()
                 }
@@ -116,5 +110,6 @@ enum SearchAcronymUiState {
 #Preview {
     let getLongFormsUseCase = GetLongFormsUseCaseImpl(acronymRepository: AcronymRepositoryImpl(acronymDataSource: AcronymRemoteDataSourceImpl(service: ApiServiceImpl())))
     
-    return SearchAcronymView(viewModel: SearchAcronymViewModel(getLongFormsUseCase: getLongFormsUseCase))
+    let viewModel = SearchAcronymViewModel(getLongFormsUseCase: getLongFormsUseCase)
+    return SearchAcronymView(viewModel: viewModel)
 }

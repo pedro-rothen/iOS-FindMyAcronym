@@ -10,7 +10,6 @@
 		EB38AEE22C45FACC0011D0CE /* FindMyAcronymApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AEE12C45FACC0011D0CE /* FindMyAcronymApp.swift */; };
 		EB38AEE62C45FACE0011D0CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB38AEE52C45FACE0011D0CE /* Assets.xcassets */; };
 		EB38AEE92C45FACE0011D0CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB38AEE82C45FACE0011D0CE /* Preview Assets.xcassets */; };
-		EB38AEF32C45FACE0011D0CE /* FindMyAcronymTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AEF22C45FACE0011D0CE /* FindMyAcronymTests.swift */; };
 		EB38AEFD2C45FACE0011D0CE /* FindMyAcronymUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AEFC2C45FACE0011D0CE /* FindMyAcronymUITests.swift */; };
 		EB38AEFF2C45FACE0011D0CE /* FindMyAcronymUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AEFE2C45FACE0011D0CE /* FindMyAcronymUITestsLaunchTests.swift */; };
 		EB38AF102C45FC700011D0CE /* AcronymRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38AF0F2C45FC700011D0CE /* AcronymRepository.swift */; };
@@ -55,7 +54,6 @@
 		EB38AEE52C45FACE0011D0CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB38AEE82C45FACE0011D0CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EB38AEEE2C45FACE0011D0CE /* FindMyAcronymTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindMyAcronymTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB38AEF22C45FACE0011D0CE /* FindMyAcronymTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyAcronymTests.swift; sourceTree = "<group>"; };
 		EB38AEF82C45FACE0011D0CE /* FindMyAcronymUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindMyAcronymUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB38AEFC2C45FACE0011D0CE /* FindMyAcronymUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyAcronymUITests.swift; sourceTree = "<group>"; };
 		EB38AEFE2C45FACE0011D0CE /* FindMyAcronymUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyAcronymUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -152,7 +150,6 @@
 				EB38AF412C4735D10011D0CE /* Presentation */,
 				EB38AF3D2C472ADF0011D0CE /* Domain */,
 				EB38AF302C46B51C0011D0CE /* Data */,
-				EB38AEF22C45FACE0011D0CE /* FindMyAcronymTests.swift */,
 			);
 			path = FindMyAcronymTests;
 			sourceTree = "<group>";
@@ -499,7 +496,6 @@
 				EB38AF342C46B8050011D0CE /* ApiServiceImplTests.swift in Sources */,
 				EB38AF442C47362A0011D0CE /* SearchAcronymViewModelTests.swift in Sources */,
 				EB38AF3B2C4723A30011D0CE /* AcronymRepositoryImplTests.swift in Sources */,
-				EB38AEF32C45FACE0011D0CE /* FindMyAcronymTests.swift in Sources */,
 				EB38AF402C472B320011D0CE /* GetLongFormsImplTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
